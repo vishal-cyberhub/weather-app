@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyCast | Premium Weather Experience</title>
-    <!-- Google Fonts: Inter & Montserrat -->
+    <title>SkyCast</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons CDN -->
+    
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,18 +30,18 @@
         </header>
 
         <section class="weather-display" id="weatherDisplay">
-            <!-- Initial state -->
+            
             <div class="welcome-message" id="welcomeMsg">
                 <i data-lucide="map-pin" class="pin-icon"></i>
                 <p>Welcome to SkyCast. Enter a location to begin.</p>
             </div>
 
-            <!-- Loading Spinner -->
+           
             <div class="loader" id="loader" style="display: none;">
                 <div class="spinner"></div>
             </div>
 
-            <!-- Weather Info (Hidden by default) -->
+            
             <div class="weather-content" id="weatherContent" style="display: none;">
                 <div class="main-info">
                     <div class="location-group">
@@ -93,7 +92,6 @@
 
     <script src="script.js"></script>
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
     </script>
 </body>
