@@ -24,7 +24,7 @@ body {
     color: var(--text-primary);
 }
 
-/* Dynamic Background Overlay */
+
 .background-overlay {
     position: fixed;
     top: 0;
@@ -60,7 +60,7 @@ body {
     background: linear-gradient(-45deg, #2193b0, #6dd5ed, #1e3c72, #2a5298);
 }
 
-/* Container */
+
 .container {
     width: 90%;
     max-width: 450px;
@@ -85,7 +85,7 @@ body {
     }
 }
 
-/* Header & Logo */
+
 .app-header {
     margin-bottom: 40px;
 }
@@ -109,7 +109,7 @@ body {
     height: 32px;
 }
 
-/* Search Box */
+
 .search-box {
     display: flex;
     gap: 12px;
@@ -168,7 +168,7 @@ button:active {
     transform: scale(0.95);
 }
 
-/* Message Styles */
+
 .welcome-message {
     text-align: center;
     padding: 60px 0;
@@ -182,7 +182,7 @@ button:active {
     opacity: 0.5;
 }
 
-/* Weather Info */
+
 .weather-content {
     animation: fadeIn 0.5s ease;
 }
@@ -231,7 +231,7 @@ button:active {
     margin-top: 8px;
 }
 
-/* Details Grid */
+
 .details-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -277,7 +277,7 @@ button:active {
     letter-spacing: 0.5px;
 }
 
-/* Loader */
+
 .loader {
     display: flex;
     justify-content: center;
