@@ -4,7 +4,6 @@ const welcomeMsg = document.getElementById("welcomeMsg");
 const loader = document.getElementById("loader");
 const weatherContent = document.getElementById("weatherContent");
 
-// Add Enter key listener
 locationInput.addEventListener("keypress", (event) => {
     if (event.key === "Enter") {
         getWeather();
@@ -19,7 +18,7 @@ async function getWeather() {
         return;
     }
 
-    // UI state: Loading
+
     showState('loading');
 
     const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=yes`;
@@ -43,22 +42,20 @@ function updateUI(data) {
     const { name, country, localtime } = data.location;
     const { temp_c, condition, feelslike_c, humidity, wind_kph, vis_km } = data.current;
 
-    // Basic Info
     document.getElementById("city").innerText = `${name}, ${country}`;
     document.getElementById("date").innerText = formatDate(localtime);
     document.getElementById("temperature").innerText = Math.round(temp_c);
     document.getElementById("condition").innerText = condition.text;
 
-    // Detailed Stats
     document.getElementById("feelsLike").innerText = `${Math.round(feelslike_c)}°C`;
     document.getElementById("humidity").innerText = `${humidity}%`;
     document.getElementById("windSpeed").innerText = `${wind_kph} km/h`;
     document.getElementById("visibility").innerText = `${vis_km} km`;
 
-    // Theme Switching
+    
     updateTheme(condition.code);
 
-    // Re-initialize Lucide icons for any dynamic elements
+    
     lucide.createIcons();
 }
 
@@ -76,9 +73,8 @@ function formatDate(dateStr) {
 
 function updateTheme(conditionCode) {
     const body = document.body;
-    body.className = ''; // Reset classes
-
-    // Reference: https://www.weatherapi.com/docs/weather_conditions.json
+    body.className = ''; 
+    
     if (conditionCode === 1000) {
         body.classList.add('theme-clear');
     } else if ([1003, 1006, 1009].includes(conditionCode)) {
