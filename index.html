@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast | Premium Weather Experience</title>
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-default">
+    <div class="background-overlay"></div>
+    
+    <main class="container">
+        <header class="app-header">
+            <div class="logo">
+                <i data-lucide="cloud-sun" class="logo-icon"></i>
+                <h1>SkyCast</h1>
+            </div>
+            <div class="search-box">
+                <div class="input-wrapper">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="locationInput" placeholder="Enter city name..." autocomplete="off">
+                </div>
+                <button id="searchBtn" onclick="getWeather()">
+                    <span>Search</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="weather-display" id="weatherDisplay">
+            <!-- Initial state -->
+            <div class="welcome-message" id="welcomeMsg">
+                <i data-lucide="map-pin" class="pin-icon"></i>
+                <p>Welcome to SkyCast. Enter a location to begin.</p>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div class="loader" id="loader" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+
+            <!-- Weather Info (Hidden by default) -->
+            <div class="weather-content" id="weatherContent" style="display: none;">
+                <div class="main-info">
+                    <div class="location-group">
+                        <h2 id="city">London</h2>
+                        <p id="date">--</p>
+                    </div>
+                    <div class="temp-group">
+                        <div class="temp-val">
+                            <span id="temperature">--</span><span class="unit">°C</span>
+                        </div>
+                        <p id="condition">--</p>
+                    </div>
+                </div>
+
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <i data-lucide="thermometer"></i>
+                        <div class="text">
+                            <span id="feelsLike">--°C</span>
+                            <label>Feels Like</label>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i data-lucide="droplets"></i>
+                        <div class="text">
+                            <span id="humidity">--%</span>
+                            <label>Humidity</label>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i data-lucide="wind"></i>
+                        <div class="text">
+                            <span id="windSpeed">-- km/h</span>
+                            <label>Wind Speed</label>
+                        </div>
+                    </div>
+                    <div class="detail-card">
+                        <i data-lucide="eye"></i>
+                        <div class="text">
+                            <span id="visibility">-- km</span>
+                            <label>Visibility</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
